@@ -8,3 +8,4 @@ hypr tome el archivo .conf por defecto y lo modifique a mi gusto
 
 el script de swww me ayudo chat xd
  
+los colores son del tema TokyoNigth-Nigth osea la verison mas oscura de tokyio nigth 
