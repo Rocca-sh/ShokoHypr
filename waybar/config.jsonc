@@ -20,11 +20,28 @@
     "pulseaudio",
     "cpu",
     "clock#time",
+    "custom/rofi1"
   ],
 
+  "cpu": {
+    "format": "<span color='#e0af68'>\uf4bc</span>{usage}%",
+    "interval": 2,
+
+    "states": {
+        "critical": 90
+    }
+  },
+
   "custom/rofi": {
-		"format": "<span color='#ffffff' >\uf31a</span>",
+		"format": "<span color='#e6e7ed' >\uebc6 \udb80\uddd9</span>",
 		"on-click": "wofi --show drun",
+    "escape" : true,
+    "tooltip" : false
+	},
+
+  "custom/rofi1": {
+		"format": "<span color='#f7768e' >\uf011</span>",
+		"on-click": "wlogout --show drun",
     "escape" : true,
     "tooltip" : false
 	},
@@ -35,26 +52,38 @@
     "format-icons": {
       "1": "<span color='#7aa2f7' >\ue8da</span>",//code
       "2": "<span color='#ff9e64' >\udb80\ude39</span>",//firefox
-      "3": "<span color='#c0caf5' >\uebca</span>",//bash
+      "3": "<span color='#9ece6a' >\uebca</span>",//bash
       "4": "<span color='#c4302b' >\uf16a</span>",//yotube
-      "5": "<span color='#e0af68' >\udb80\ude14</span>",//file
-      "6": "<span color='#7289da' >\uf1ff</span>",//discord
-      "7": "<span color='#9ece6a' >\uf1bc</span>",//spoty
-      "8": "<span color='#4e5d94'>\uf1b6</span>",//steam
-      "9": "<span color='#bb9af7' >\ueba7</span>",//recorder 
-    }
+      "5": "<span color='#7289da' >\uf1ff</span>",//discord
+      "6": "<span color='#9ece6a' >\uf1bc</span>",//spoty
+      "7": "<span color='#4e5d94'>\uf1b6</span>",//steam
+      "8": "<span color='#bb9af7' >\ueba7</span>",//recorder 
+    },
+    "persistent-workspaces": {
+      "*": 3
+  }
   },
 
   "hyprland/window": {
-    "format": "{class}",
+    "format": "{initialClass}",
     "max-length": 20,
+    "icon": true,
+    "icon-size": 20,
+    "separate-outputs": true,
     "rewrite": {
-      "": "<span foreground= '#458588'></span> hyprland",
-      "~": "terminal",
-      "com.mitchellh.ghostty": ">> ghostty",
-      "zen-beta": ">> zen"
+      "": "<span foreground= '#458588'>\ue795</span> Rocca.sh",
     }
   },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size":20,
+    "spacing": 9,
+    "on-click-middle": "close",
+    "tooltip-format": "{title}",
+    "ignore-list": [],
+    "markup": true,
+},
 
   "tray": {
     "icon-size": 15,
@@ -63,10 +92,10 @@
 
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "<span color='#fbf1c7' >  </span>{volume}%",
-    "format-muted": "<span color='#fbf1c7' >  </span>{volume}%",
-    "format-bluetooth": "<span color='#fbf1c7' > 󰂰 </span>{volume}%",
-    "format-bluetooth-muted": "<span color='#fbf1c7' > 󰂲 </span>{volume}%",
+    "format": "<span color='#bb9af7' >  </span>{volume}%",
+    "format-muted": "<span color='#bb9af7' >  </span>{volume}%",
+    "format-bluetooth": "<span color='#bb9af7' > 󰂰 </span>{volume}%",
+    "format-bluetooth-muted": "<span color='#bb9af7' > 󰂲 </span>{volume}%",
     "format-source": "{volume}% ",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip": false,
